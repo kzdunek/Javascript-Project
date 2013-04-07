@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>World Map</title>
+        <link rel="stylesheet" href="style.css" media="screen">
+        <link rel="stylesheet" href="style-print.css" media="print">
+        <script src="raphael.js"></script>
+        <script src="world.js"></script>
+        <script>
+            Raphael(10, 10, 1000, 600, function () {
+				
+
+                var r = this;
+                r.rect(0, 0, 1000, 600, 10).attr({
+                    stroke: "none",
+                    fill: "0-#9bb7cb-#adc8da"
+                });
+                var over = function () {
+                    this.c = this.c || this.attr("fill");
+                    this.stop().animate({fill: "#bacabd"}, 500);
+                },
+                    out = function () {
+                        this.stop().animate({fill: this.c}, 500);
+                    };
+                r.setStart();
+                var hue = Math.random();
+				
+                for (var country in worldmap.shapes) {
+                    // var c = Raphael.hsb(Math.random(), .5, .75);
+                    // var c = Raphael.hsb(.11, .5, Math.random() * .25 - .25 + .75);
+					
+					r.path(worldmap.shapes["AA"]).attr({stroke: "red", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["AB"]).attr({stroke: "red", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["AC"]).attr({stroke: "red", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["AD"]).attr({stroke: "red", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["AE"]).attr({stroke: "red", fill: "#f0efeb", "stroke-opacity": 0.25});
+					
+					r.path(worldmap.shapes["BA"]).attr({stroke: "blue", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["BB"]).attr({stroke: "blue", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["BC"]).attr({stroke: "blue", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["BD"]).attr({stroke: "blue", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["BE"]).attr({stroke: "blue", fill: "#f0efeb", "stroke-opacity": 0.25});
+					
+					r.path(worldmap.shapes["CA"]).attr({stroke: "purple", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["CB"]).attr({stroke: "purple", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["CC"]).attr({stroke: "purple", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["CD"]).attr({stroke: "purple", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["CE"]).attr({stroke: "purple", fill: "#f0efeb", "stroke-opacity": 0.25});
+					
+					r.path(worldmap.shapes["DA"]).attr({stroke: "green", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["DB"]).attr({stroke: "green", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["DC"]).attr({stroke: "green", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["DD"]).attr({stroke: "green", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["DE"]).attr({stroke: "green", fill: "#f0efeb", "stroke-opacity": 0.25});
+					
+					r.path(worldmap.shapes["EA"]).attr({stroke: "black", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["EB"]).attr({stroke: "black", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["EC"]).attr({stroke: "black", fill: "#f0efeb", "stroke-opacity": 0.25});
+					r.path(worldmap.shapes["ED"]).attr({stroke: "black", fill: "#f0efeb", "stroke-opacity": 0.25});
+                }
+	
+                var world = r.setFinish();
+                world.hover(over, out);
+                // world.animate({fill: "#666", stroke: "#666"}, 2000);
+	
+               
+            });
+        </script>
+    </head>
+    <body>
+   
+
+
+	</body>
+</html>
